@@ -111,12 +111,12 @@ ol, ul {
 
 /* Progress bar */
 .progressline .bar {
-    background: #f69801;
+    background: #fa6bbe;
 }
 
 /* On scroll progress bar */
 #progress-bar {
-    background: linear-gradient(to right, #f69801 var(--progress), transparent 0);
+    background: linear-gradient(to right, #fa6bbe var(--progress), transparent 0);
     height: 5px;
     position: fixed;
     width: 100%;
@@ -594,7 +594,7 @@ header {
 }
 
 .lg-progress-bar .lg-progress {
-    background-color: #db980f !important;
+    background-color: #fa6bbe !important;
     height: 4px;
     width: 0;
 }
@@ -656,7 +656,7 @@ header {
 }
 .article-card-link, .article-card-link:hover{
     text-decoration: none;
-    color: orange !important;
+    color: #fa6bbe !important;
 }
 .article-card{
     list-style-type: none;
