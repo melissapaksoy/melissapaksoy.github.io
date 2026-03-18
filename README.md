@@ -1,2 +1,0 @@
-# melissapaksoy.github.io
-portfolio
