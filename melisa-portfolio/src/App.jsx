@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
+import DemoVideo from "./pages/DemoVideo";
 import ResumePage from "./pages/ResumePage";
 import CoverLetterPage from "./pages/CoverLetterPage";
 import GlamUpPage from "./pages/GlamUpPage";
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/demo" element={<DemoVideo />} />
       <Route path="/resume" element={<ResumePage />} />
       <Route path="/cover-letter" element={<CoverLetterPage />} />
       <Route path="/projects/glamup" element={<GlamUpPage />} />

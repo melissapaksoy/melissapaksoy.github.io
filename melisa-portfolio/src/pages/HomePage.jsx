@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const profileImg = `${import.meta.env.BASE_URL}profile.jpg`;
 
+
 const DOCUMENTS = {
     honoursFall2023: `${import.meta.env.BASE_URL}honours_fall2023.png`,
     honoursFall2024: `${import.meta.env.BASE_URL}honours_fall2024.png`,
@@ -39,7 +40,6 @@ const LINKS = {
     github: "https://github.com/melissapaksoy",
     linkedin: "https://www.linkedin.com/in/melissapaksoy/",
     email: "mailto:melisapaksoy@hotmail.com",
-    portfolioDemo: "#",
 };
 
 const BIO =
@@ -327,7 +327,13 @@ export default function HomePage() {
                                 Cover Letter
                             </Link>
 
-                            <LinkButton href={LINKS.portfolioDemo}>Video Demo</LinkButton>
+                            <Link
+                                to="/demo"
+                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                                style={{ borderColor: T.border, color: T.ink }}
+                            >
+                                Video Demo
+                            </Link>
                         </div>
                     </div>
                 </Card>
