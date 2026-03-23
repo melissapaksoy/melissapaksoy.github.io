@@ -1,7 +1,31 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const profileImg = `${import.meta.env.BASE_URL}profile.jpg`;
+
+const DOCUMENTS = {
+    honoursFall2023: `${import.meta.env.BASE_URL}honours_fall2023.png`,
+    honoursFall2024: `${import.meta.env.BASE_URL}honours_fall2024.png`,
+    honoursFall2025: `${import.meta.env.BASE_URL}honours_fall2025.png`,
+    honoursWinter2024: `${import.meta.env.BASE_URL}honours_winter2024.png`,
+    honoursWinter2025: `${import.meta.env.BASE_URL}honours_winter2025.png`,
+    fashionDiploma: `${import.meta.env.BASE_URL}MelisaPaksoyFashionDesignDiploma.png`,
+    ontarioScholar: `${import.meta.env.BASE_URL}MelisaPaksoyOntarioScholar.png`,
+    ontarioDiploma: `${import.meta.env.BASE_URL}MelisaPaksoyOntarioDiploma.png`,
+    cipsMembership: `${import.meta.env.BASE_URL}cipsmembershipcard.png`,
+    devfest2025: `${import.meta.env.BASE_URL}devfest2025.png`,
+};
+
+const PROJECT_IMAGES = {
+    academicpdf: `${import.meta.env.BASE_URL}academicpdf.png`,
+    slideportal: `${import.meta.env.BASE_URL}slideportal.png`,
+    chat: `${import.meta.env.BASE_URL}chatapp.png`,
+    gomoku: `${import.meta.env.BASE_URL}gomoku.png`,
+    pathways: `${import.meta.env.BASE_URL}pathways.png`,
+    glamup: `${import.meta.env.BASE_URL}glamup.png`,
+};
+
 
 const T = {
     bg: "#050508",
@@ -94,14 +118,127 @@ function MiniTitle({ children }) {
     );
 }
 
+function DocumentModal({ open, onClose, title, src }) {
+    if (!open || !src) return null;
+
+    return (
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4"
+            onClick={onClose}
+        >
+            <div
+                className="relative w-full max-w-5xl rounded-3xl border p-4 md:p-6"
+                style={{
+                    borderColor: T.border,
+                    background: "#0b0b10",
+                    boxShadow: "0 24px 80px rgba(0,0,0,0.45)",
+                }}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <div className="mb-4 flex items-center justify-between gap-4">
+                    <h3 className="text-lg md:text-xl font-semibold" style={{ color: T.ink }}>
+                        {title}
+                    </h3>
+
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="rounded-xl border px-4 py-2 text-sm transition hover:bg-white/5"
+                        style={{ borderColor: T.border, color: T.ink }}
+                    >
+                        Close
+                    </button>
+                </div>
+
+                <div className="max-h-[80vh] overflow-auto rounded-2xl border bg-white p-2">
+                    <img
+                        src={src}
+                        alt={title}
+                        className="w-full h-auto object-contain"
+                    />
+                </div>
+
+                <div className="mt-4 flex justify-end">
+                    <a
+                        href={src}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                        style={{ borderColor: T.border, color: T.ink }}
+                    >
+                        Open Full Size
+                    </a>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function ProjectCard({ to, image, title, description }) {
+    return (
+        <Link
+            to={to}
+            className="group h-full rounded-2xl border overflow-hidden hover:bg-white/5 transition block"
+            style={{ borderColor: T.border }}
+        >
+            <div className="relative w-full h-[190px] overflow-hidden bg-black">
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+            </div>
+
+            <div className="p-6 flex flex-col min-h-[230px]">
+                <h3 className="font-semibold text-lg" style={{ color: T.ink }}>
+                    {title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-7 flex-1" style={{ color: T.muted }}>
+                    {description}
+                </p>
+
+                <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
+                    View Project →
+                </div>
+            </div>
+        </Link>
+    );
+}
+
 export default function HomePage() {
+    const [selectedDoc, setSelectedDoc] = useState(null);
+
+    const honoursDocs = [
+        { title: "Fall 2025", src: DOCUMENTS.honoursFall2025 },
+        { title: "Winter 2025", src: DOCUMENTS.honoursWinter2025 },
+        { title: "Fall 2024", src: DOCUMENTS.honoursFall2024 },
+        { title: "Winter 2024", src: DOCUMENTS.honoursWinter2024 },
+        { title: "Fall 2023", src: DOCUMENTS.honoursFall2023 },
+    ];
+
+    const certificationDocs = [
+        {
+            title: "CIPS Ontario Membership",
+            src: DOCUMENTS.cipsMembership,
+            description:
+                "Provincial society membership connected to the Canadian Information Processing Society, supporting IT standards, professional development, networking, and best practices in the Canadian tech industry.",
+        },
+        {
+            title: "Google DevFest Toronto 2025",
+            src: DOCUMENTS.devfest2025,
+            description:
+                "Participation in DevFest 2025 Toronto, a major developer conference bringing together students, developers, companies, and industry experts to explore Google Cloud, machine learning, AI, and emerging technologies.",
+        },
+    ];
+
     return (
         <div
             className="min-h-screen px-6 py-16"
             style={{ background: T.bg, color: T.ink }}
         >
             <div className="max-w-6xl mx-auto space-y-10">
-                {/* HERO */}
                 <Card>
                     <div className="flex flex-col items-center text-center">
                         <div
@@ -110,7 +247,7 @@ export default function HomePage() {
                         >
                             <img
                                 src={profileImg}
-                                alt="Melisa Paksoy"
+                                alt="Melissa Paksoy"
                                 className="w-full h-[440px] object-cover"
                             />
                         </div>
@@ -119,7 +256,7 @@ export default function HomePage() {
                             className="mt-8 text-4xl md:text-5xl font-semibold"
                             style={{ color: T.pink }}
                         >
-                            Melisa Paksoy
+                            Melissa Paksoy
                         </h1>
 
                         <div className="mt-3 text-xl md:text-2xl font-semibold">
@@ -195,7 +332,6 @@ export default function HomePage() {
                     </div>
                 </Card>
 
-                {/* NAV */}
                 <Card>
                     <div className="flex flex-wrap justify-center gap-3">
                         <NavButton href="#about">About Me</NavButton>
@@ -208,7 +344,6 @@ export default function HomePage() {
                     </div>
                 </Card>
 
-                {/* ABOUT */}
                 <Card id="about">
                     <SectionTitle>About Me</SectionTitle>
                     <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-[1.9] text-center">
@@ -216,7 +351,6 @@ export default function HomePage() {
                     </div>
                 </Card>
 
-                {/* CAREER PHILOSOPHY */}
                 <Card id="philosophy">
                     <SectionTitle>Career Philosophy</SectionTitle>
                     <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-[1.9] text-center">
@@ -236,7 +370,6 @@ export default function HomePage() {
                     </div>
                 </Card>
 
-                {/* PROFESSIONAL WORK */}
                 <Card id="professional-work">
                     <SectionTitle>Professional Work Samples</SectionTitle>
                     <p
@@ -248,111 +381,57 @@ export default function HomePage() {
                         system design, and production-level functionality.
                     </p>
 
-                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                        <Link
+                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+                        <ProjectCard
                             to="/projects/academicpdf"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">AcademicPDF</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Desktop PDF analyzer and structured report generator built with
-                                Python and PyQt5 to support academic workflow automation and
-                                document processing within institutional environments.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
+                            image={PROJECT_IMAGES.academicpdf}
+                            title="AcademicPDF"
+                            description="Desktop PDF analyzer and structured report generator built with Python and PyQt5 to support academic workflow automation and document processing within institutional environments."
+                        />
 
-                        <Link
+                        <ProjectCard
                             to="/projects/pathways"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">Pathways Database</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Academic pathway search system using PostgreSQL and a modern web
-                                interface, designed to support structured searching, filtering,
-                                and efficient data access for institutional use.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
+                            image={PROJECT_IMAGES.pathways}
+                            title="Pathways Database"
+                            description="Academic pathway search system using PostgreSQL and a modern web interface, designed to support structured searching, filtering, and efficient data access for institutional use."
+                        />
 
-                        <Link
+                        <ProjectCard
                             to="/projects/slideportal"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">Student Awards SlidePortal</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Real-time multi-device awards presentation system built with
-                                Flask and Socket.IO to enable synchronized displays and
-                                streamlined event workflows during institutional ceremonies.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
+                            image={PROJECT_IMAGES.slideportal}
+                            title="Student Awards SlidePortal"
+                            description="Real-time multi-device awards presentation system built with Flask and Socket.IO to enable synchronized displays and streamlined event workflows during institutional ceremonies."
+                        />
                     </div>
                 </Card>
-                {/* ACADEMIC WORK */}
+
                 <Card id="academic-work">
                     <SectionTitle>Academic Work Samples</SectionTitle>
 
-                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-                        <Link
+                    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+                        <ProjectCard
                             to="/projects/glamup"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block text-center"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">GlamUp!</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Cross-platform beauty services application built with React Native,
-                                Expo, and Firebase featuring booking systems, role-based access,
-                                and modern mobile UI.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
+                            image={PROJECT_IMAGES.glamup}
+                            title="Capstone Project: GlamUp!"
+                            description="Cross-platform beauty services application built with React Native, Expo, and Firebase featuring booking systems, role-based access, and modern mobile UI."
+                        />
 
-                        <Link
+                        <ProjectCard
                             to="/projects/chat"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block text-center"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">Real-Time Chat Application</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Real-time messaging system built with Node.js, Express, MongoDB,
-                                and Socket.IO supporting authentication and live communication.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
+                            image={PROJECT_IMAGES.chat}
+                            title="Real-Time Chat Application"
+                            description="Real-time messaging system built with Node.js, Express, MongoDB, and Socket.IO supporting authentication and live communication."
+                        />
 
-                        <Link
+                        <ProjectCard
                             to="/projects/gomoku"
-                            className="p-6 rounded-2xl border hover:bg-white/5 transition block text-center"
-                            style={{ borderColor: T.border }}
-                        >
-                            <h3 className="font-semibold text-lg">Gomoku AI</h3>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
-                                Strategic board game developed in Java using the Minimax algorithm
-                                to simulate intelligent decision-making and gameplay.
-                            </p>
-                            <div className="mt-4 text-sm font-medium" style={{ color: T.pink }}>
-                                View Project →
-                            </div>
-                        </Link>
-
+                            image={PROJECT_IMAGES.gomoku}
+                            title="Gomoku AI"
+                            description="Strategic board game developed in Java using the Minimax algorithm to simulate intelligent decision-making and gameplay."
+                        />
                     </div>
                 </Card>
-                {/* SKILLS */}
+
                 <Card id="skills">
                     <SectionTitle>Technical Skills</SectionTitle>
 
@@ -391,110 +470,268 @@ export default function HomePage() {
                     </div>
                 </Card>
 
-                {/* EDUCATION */}
                 <Card id="education">
-                    <SectionTitle>Academic Credentials & Awards</SectionTitle>
+                    <SectionTitle>Education, Awards & Certifications</SectionTitle>
 
-                    <div className="space-y-10 text-center">
-                        <div>
-                            <MiniTitle>
-                                Advanced Diploma — Computer Programming & Analysis
-                            </MiniTitle>
+                    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
 
-                            <div className="mt-1 text-sm" style={{ color: T.muted }}>
-                                George Brown Polytechnic | Expected 2026
-                            </div>
+                        {/* 1️⃣ COMPUTER PROGRAMMING */}
+                        <div
+                            className="rounded-3xl border p-7 md:p-8 flex flex-col justify-between h-full text-center"
+                            style={{
+                                borderColor: T.border,
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.07), rgba(255,255,255,0.02))",
+                                boxShadow: "0 0 40px rgba(255,79,163,0.05)",
+                            }}
+                        >
+                            <div>
+                                <MiniTitle>
+                                    Advanced Diploma — Computer Programming & Analysis
+                                </MiniTitle>
 
-                            <div className="mt-2 text-sm font-medium" style={{ color: T.pink }}>
-                                Honours Standing — Achieved Every Semester
-                            </div>
-
-                            <div
-                                className="mt-6 grid md:grid-cols-2 gap-4 text-sm"
-                                style={{ color: T.muted }}
-                            >
-                                <div>
-                                    <strong style={{ color: T.ink }}>
-                                        Programming & Software Development
-                                    </strong>
-                                    <ul className="mt-2 list-disc list-inside space-y-1">
-                                        <li>Object-Oriented Programming</li>
-                                        <li>Java Application Development</li>
-                                        <li>Agile Software Development</li>
-                                        <li>Open Source Development</li>
-                                    </ul>
+                                <div className="mt-1 text-sm" style={{ color: T.muted }}>
+                                    George Brown Polytechnic | Expected 2026
                                 </div>
 
-                                <div>
-                                    <strong style={{ color: T.ink }}>Web & Full-Stack</strong>
-                                    <ul className="mt-2 list-disc list-inside space-y-1">
-                                        <li>Introduction to Web Development</li>
-                                        <li>Advanced Web Programming</li>
-                                        <li>Web Application Development</li>
-                                        <li>Full Stack Development I & II</li>
-                                    </ul>
+                                <p
+                                    className="mt-4 text-sm leading-7 max-w-md mx-auto"
+                                    style={{ color: T.muted }}
+                                >
+                                    Focused on software development, full-stack applications,
+                                    database systems, real-time communication, mobile development,
+                                    and scalable system design.
+                                </p>
+
+                                <div
+                                    className="mt-5 inline-flex rounded-full px-4 py-2 text-xs md:text-sm font-medium"
+                                    style={{
+                                        background: "rgba(255,79,163,0.10)",
+                                        color: T.pink,
+                                        border: "1px solid rgba(255,79,163,0.18)",
+                                    }}
+                                >
+                                    Honours Standing — Achieved Every Semester
                                 </div>
 
-                                <div>
-                                    <strong style={{ color: T.ink }}>
-                                        Systems & Infrastructure
-                                    </strong>
-                                    <ul className="mt-2 list-disc list-inside space-y-1">
-                                        <li>Linux Essentials</li>
-                                        <li>DevOps</li>
-                                        <li>Introduction to Cyber Security</li>
-                                    </ul>
-                                </div>
+                                {/* DEANS LIST INSIDE */}
+                                <div className="mt-7">
+                                    <MiniTitle>Dean’s Honour List</MiniTitle>
 
-                                <div>
-                                    <strong style={{ color: T.ink }}>Data & Algorithms</strong>
-                                    <ul className="mt-2 list-disc list-inside space-y-1">
-                                        <li>Data Structures & Algorithms</li>
-                                        <li>Database Management</li>
-                                        <li>Applied Data Science</li>
-                                        <li>Applied Machine Learning</li>
-                                    </ul>
-                                </div>
+                                    <p
+                                        className="mt-3 text-sm leading-7 max-w-md mx-auto"
+                                        style={{ color: T.muted }}
+                                    >
+                                        GPA 3.5+ across multiple semesters.
+                                    </p>
 
-                                <div className="md:col-span-2">
-                                    <strong style={{ color: T.ink }}>Mobile & Capstone</strong>
-                                    <ul className="mt-2 list-disc list-inside space-y-1">
-                                        <li>Mobile Application Development I & II</li>
-                                        <li>Capstone Project I & II</li>
-                                    </ul>
+                                    <div className="mt-5 grid grid-cols-2 gap-3">
+                                        {honoursDocs.map((doc) => (
+                                            <button
+                                                key={doc.title}
+                                                onClick={() =>
+                                                    setSelectedDoc({
+                                                        title: `Dean’s Honour List — ${doc.title}`,
+                                                        src: doc.src,
+                                                    })
+                                                }
+                                                className="rounded-xl border px-3 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                                style={{
+                                                    borderColor: T.border,
+                                                    color: T.ink,
+                                                    background: "rgba(255,255,255,0.02)",
+                                                }}
+                                            >
+                                                {doc.title}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="pt-6 border-t" style={{ borderColor: T.border }}>
-                            <MiniTitle>Diploma — Fashion Techniques and Design</MiniTitle>
+                        {/* 2️⃣ CERTIFICATIONS */}
+                        <div
+                            className="rounded-3xl border p-7 md:p-8 flex flex-col justify-between h-full text-center"
+                            style={{
+                                borderColor: T.border,
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.05), rgba(255,255,255,0.02))",
+                                boxShadow: "0 0 35px rgba(255,79,163,0.04)",
+                            }}
+                        >
+                            <div>
+                                <MiniTitle>Certifications & Memberships</MiniTitle>
 
-                            <div className="mt-1 text-sm" style={{ color: T.muted }}>
-                                George Brown College | 2016
+                                <p
+                                    className="mt-3 text-sm max-w-md mx-auto leading-7"
+                                    style={{ color: T.muted }}
+                                >
+                                    Professional memberships and industry participation that support
+                                    technical growth and networking.
+                                </p>
                             </div>
 
-                            <p
-                                className="mt-3 text-sm leading-7 max-w-3xl mx-auto"
-                                style={{ color: T.muted }}
-                            >
-                                Developed a strong creative foundation in design thinking,
-                                visual communication, aesthetics, and presentation. This
-                                background continues to influence the way I design user
-                                interfaces and approach software with both technical and visual
-                                intention.
-                            </p>
+                            <div className="mt-6 grid gap-4">
+                                {certificationDocs.map((cert) => (
+                                    <div
+                                        key={cert.title}
+                                        className="rounded-2xl border p-4"
+                                        style={{
+                                            borderColor: "rgba(255,255,255,0.06)",
+                                            background: "rgba(255,255,255,0.015)",
+                                        }}
+                                    >
+                                        <button
+                                            onClick={() =>
+                                                setSelectedDoc({
+                                                    title: cert.title,
+                                                    src: cert.src,
+                                                })
+                                            }
+                                            className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                            style={{
+                                                borderColor: T.border,
+                                                color: T.ink,
+                                                background: "rgba(255,255,255,0.02)",
+                                            }}
+                                        >
+                                            {cert.title}
+                                        </button>
+
+                                        <p
+                                            className="mt-3 text-sm leading-7"
+                                            style={{ color: T.muted }}
+                                        >
+                                            {cert.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
+
+                        {/* 3️⃣ FASHION */}
+                        <div
+                            className="rounded-3xl border p-7 md:p-8 flex flex-col justify-between h-full text-center"
+                            style={{
+                                borderColor: T.border,
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.04), rgba(255,255,255,0.02))",
+                                boxShadow: "0 0 25px rgba(255,79,163,0.03)",
+                            }}
+                        >
+                            <div>
+                                <MiniTitle>Fashion Techniques & Design</MiniTitle>
+
+                                <div className="mt-1 text-sm" style={{ color: T.muted }}>
+                                    George Brown College | 2016
+                                </div>
+
+                                <p
+                                    className="mt-4 text-sm leading-7 max-w-md mx-auto"
+                                    style={{ color: T.muted }}
+                                >
+                                    Strong foundation in design thinking, aesthetics,
+                                    and creative problem solving.
+                                </p>
+                            </div>
+
+                            <div className="mt-6">
+                                <button
+                                    onClick={() =>
+                                        setSelectedDoc({
+                                            title: "Fashion Techniques & Design Diploma",
+                                            src: DOCUMENTS.fashionDiploma,
+                                        })
+                                    }
+                                    className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    style={{
+                                        borderColor: T.border,
+                                        color: T.ink,
+                                        background: "rgba(255,255,255,0.02)",
+                                    }}
+                                >
+                                    View Diploma
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* 4️⃣ HIGH SCHOOL */}
+                        <div
+                            className="rounded-3xl border p-7 md:p-8 flex flex-col justify-between h-full text-center"
+                            style={{
+                                borderColor: T.border,
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.04), rgba(255,255,255,0.02))",
+                                boxShadow: "0 0 25px rgba(255,79,163,0.03)",
+                            }}
+                        >
+                            <div>
+                                <MiniTitle>High School Diploma & Ontario Scholar</MiniTitle>
+
+                                <p
+                                    className="mt-3 text-sm leading-7 max-w-md mx-auto"
+                                    style={{ color: T.muted }}
+                                >
+                                    Blyth Academy — Ontario Secondary School Diploma, 2014
+                                </p>
+                            </div>
+
+                            <div className="mt-6 grid grid-cols-2 gap-3">
+                                <button
+                                    onClick={() =>
+                                        setSelectedDoc({
+                                            title: "Ontario Secondary School Diploma",
+                                            src: DOCUMENTS.ontarioDiploma,
+                                        })
+                                    }
+                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    style={{
+                                        borderColor: T.border,
+                                        color: T.ink,
+                                        background: "rgba(255,255,255,0.02)",
+                                    }}
+                                >
+                                    Diploma
+                                </button>
+
+                                <button
+                                    onClick={() =>
+                                        setSelectedDoc({
+                                            title: "Ontario Scholar Certificate",
+                                            src: DOCUMENTS.ontarioScholar,
+                                        })
+                                    }
+                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    style={{
+                                        borderColor: T.border,
+                                        color: T.ink,
+                                        background: "rgba(255,255,255,0.02)",
+                                    }}
+                                >
+                                    Ontario Scholar
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </Card>
-
-                {/* EXPERIENCE */}
                 <Card id="experience">
                     <SectionTitle>Professional Experience</SectionTitle>
 
-                    <div className="max-w-4xl mx-auto space-y-8 text-center">
-                        <div>
+                    <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 text-left">
+
+                        {/* LEFT */}
+                        <div
+                            className="rounded-2xl p-6 border"
+                            style={{
+                                borderColor: "rgba(255,255,255,0.08)",
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+                            }}
+                        >
                             <MiniTitle>Student Ambassador & Junior Software Developer</MiniTitle>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
+                            <p className="mt-3 text-sm leading-7" style={{ color: T.muted }}>
                                 Contributed to academic and institutional software initiatives,
                                 supporting the design and development of real-world systems used
                                 in student and administrative environments. Worked on projects
@@ -503,23 +740,39 @@ export default function HomePage() {
                             </p>
                         </div>
 
-                        <div className="border-t pt-6" style={{ borderColor: T.border }}>
+                        {/* RIGHT */}
+                        <div
+                            className="rounded-2xl p-6 border"
+                            style={{
+                                borderColor: "rgba(255,255,255,0.08)",
+                                background:
+                                    "linear-gradient(135deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+                            }}
+                        >
                             <MiniTitle>
                                 Brand Ambassador / Beauty Expert / Creative Experience
                             </MiniTitle>
-                            <p className="mt-2 text-sm leading-7" style={{ color: T.muted }}>
+                            <p className="mt-3 text-sm leading-7" style={{ color: T.muted }}>
                                 Prior experience in beauty, retail, and design strengthened my
                                 communication, presentation, client-facing, and brand awareness
                                 skills. These experiences continue to support how I approach
                                 user needs, product presentation, and polished digital design.
                             </p>
                         </div>
+
                     </div>
                 </Card>
 
                 <footer className="text-center text-sm" style={{ color: T.muted }}>
-                    © {new Date().getFullYear()} Melisa Paksoy
+                    © {new Date().getFullYear()} Melissa Paksoy
                 </footer>
+
+                <DocumentModal
+                    open={!!selectedDoc}
+                    onClose={() => setSelectedDoc(null)}
+                    title={selectedDoc?.title}
+                    src={selectedDoc?.src}
+                />
             </div>
         </div>
     );
