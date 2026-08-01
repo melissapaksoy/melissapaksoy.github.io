@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const coverLetterFile = `${import.meta.env.BASE_URL}MelisaPaksoyCoverLetter.pdf`;
 
 const T = {
-    bg: "#050508",
-    ink: "#F6F7FB",
-    muted: "rgba(246,247,251,0.72)",
-    border: "rgba(255,255,255,0.10)",
-    pink: "#FF4FA3",
+    bg: "#FAF7F2",
+    ink: "#1A1613",
+    muted: "rgba(26,22,19,0.72)",
+    border: "rgba(20,15,10,0.10)",
+    pink: "#9C7A2E",
 };
 
 function Card({ children }) {
@@ -15,11 +15,11 @@ function Card({ children }) {
         <div
             className="rounded-3xl border p-10 md:p-12"
             style={{
-                borderColor: "rgba(255,255,255,0.08)",
+                borderColor: "rgba(20,15,10,0.08)",
                 background:
-                    "linear-gradient(135deg, rgba(255,79,163,0.08), rgba(255,255,255,0.03))",
+                    "linear-gradient(135deg, rgba(184,134,11,0.08), rgba(20,15,10,0.03))",
                 boxShadow:
-                    "0 0 0 1px rgba(255,79,163,0.05) inset, 0 24px 80px rgba(0,0,0,0.35)",
+                    "0 0 0 1px rgba(184,134,11,0.05) inset, 0 24px 80px rgba(20,15,10,0.06)",
             }}
         >
             {children}
@@ -34,7 +34,7 @@ function ActionButton({ href, children, download }) {
             download={download}
             target={!download ? "_blank" : undefined}
             rel={!download ? "noreferrer" : undefined}
-            className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
             style={{ borderColor: T.border, color: T.ink }}
         >
             {children}
@@ -52,7 +52,7 @@ export default function CoverLetterPage() {
                 <div className="flex flex-wrap justify-center gap-3">
                     <Link
                         to="/"
-                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                         style={{ borderColor: T.border, color: T.ink }}
                     >
                         Back to Home

@@ -8,7 +8,7 @@ export default function HeroTitle({ children, maxWidth = "none" }) {
         lineHeight: 0.94,
         letterSpacing: "-0.05em",
         fontWeight: 900,
-        background: "linear-gradient(90deg, #F6F7FB 0%, #FF85C1 45%, #FF4FA3 100%)",
+        background: "linear-gradient(90deg, #1A1613 0%, #B8860B 55%, #9C7A2E 100%)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
       }}

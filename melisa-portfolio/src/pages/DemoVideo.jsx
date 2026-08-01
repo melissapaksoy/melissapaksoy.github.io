@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const demoVideo = `${import.meta.env.BASE_URL}PortfolioDemo.mp4`;
 
 const T = {
-    bg: "#050508",
-    ink: "#F6F7FB",
-    muted: "rgba(246,247,251,0.72)",
-    border: "rgba(255,255,255,0.10)",
-    pink: "#FF4FA3",
+    bg: "#FAF7F2",
+    ink: "#1A1613",
+    muted: "rgba(26,22,19,0.72)",
+    border: "rgba(20,15,10,0.10)",
+    pink: "#9C7A2E",
 };
 
 export default function DemoPage() {
@@ -36,7 +36,7 @@ export default function DemoPage() {
                     style={{
                         borderColor: T.border,
                         background:
-                            "linear-gradient(135deg, rgba(255,79,163,0.08), rgba(255,255,255,0.03))",
+                            "linear-gradient(135deg, rgba(184,134,11,0.08), rgba(20,15,10,0.03))",
                     }}
                 >
                     <video
@@ -52,7 +52,7 @@ export default function DemoPage() {
                 <div className="pt-6">
                     <Link
                         to="/"
-                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                         style={{ borderColor: T.border, color: T.ink }}
                     >
                         ← Back to Home

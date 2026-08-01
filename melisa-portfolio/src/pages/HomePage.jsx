@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-const profileImg = `${import.meta.env.BASE_URL}profile.jpg`;
+const profileImg = `${import.meta.env.BASE_URL}profile.png`;
 
 
 const DOCUMENTS = {
@@ -29,11 +29,11 @@ const PROJECT_IMAGES = {
 
 
 const T = {
-    bg: "#050508",
-    ink: "#F6F7FB",
-    muted: "rgba(246,247,251,0.72)",
-    border: "rgba(255,255,255,0.10)",
-    pink: "#FF4FA3",
+    bg: "#FAF7F2",
+    ink: "#1A1613",
+    muted: "rgba(26,22,19,0.68)",
+    border: "rgba(20,15,10,0.12)",
+    pink: "#9C7A2E",
 };
 
 const LINKS = {
@@ -60,11 +60,11 @@ function Card({ children, id }) {
             id={id}
             className="rounded-3xl border p-8 md:p-10 scroll-mt-24"
             style={{
-                borderColor: "rgba(255,255,255,0.08)",
+                borderColor: "rgba(20,15,10,0.08)",
                 background:
-                    "linear-gradient(135deg, rgba(255,79,163,0.08), rgba(255,255,255,0.03))",
+                    "linear-gradient(135deg, rgba(184,134,11,0.06), rgba(20,15,10,0.02))",
                 boxShadow:
-                    "0 0 0 1px rgba(255,79,163,0.05) inset, 0 24px 80px rgba(0,0,0,0.35)",
+                    "0 0 0 1px rgba(184,134,11,0.06) inset, 0 20px 60px rgba(20,15,10,0.06)",
             }}
         >
             {children}
@@ -79,7 +79,7 @@ function LinkButton({ href, children, download }) {
             download={download}
             target={!download ? "_blank" : undefined}
             rel={!download ? "noreferrer" : undefined}
-            className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
             style={{ borderColor: T.border, color: T.ink }}
         >
             {children}
@@ -91,7 +91,7 @@ function NavButton({ href, children }) {
     return (
         <a
             href={href}
-            className="inline-flex items-center justify-center px-4 py-2 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
             style={{ borderColor: T.border, color: T.muted }}
         >
             {children}
@@ -130,8 +130,8 @@ function DocumentModal({ open, onClose, title, src }) {
                 className="relative w-full max-w-5xl rounded-3xl border p-4 md:p-6"
                 style={{
                     borderColor: T.border,
-                    background: "#0b0b10",
-                    boxShadow: "0 24px 80px rgba(0,0,0,0.45)",
+                    background: "#FFFFFF",
+                    boxShadow: "0 24px 60px rgba(20,15,10,0.18)",
                 }}
                 onClick={(e) => e.stopPropagation()}
             >
@@ -143,7 +143,7 @@ function DocumentModal({ open, onClose, title, src }) {
                     <button
                         type="button"
                         onClick={onClose}
-                        className="rounded-xl border px-4 py-2 text-sm transition hover:bg-white/5"
+                        className="rounded-xl border px-4 py-2 text-sm transition hover:bg-black/5"
                         style={{ borderColor: T.border, color: T.ink }}
                     >
                         Close
@@ -163,7 +163,7 @@ function DocumentModal({ open, onClose, title, src }) {
                         href={src}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                        className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                         style={{ borderColor: T.border, color: T.ink }}
                     >
                         Open Full Size
@@ -178,7 +178,7 @@ function ProjectCard({ to, image, title, description }) {
     return (
         <Link
             to={to}
-            className="group h-full rounded-2xl border overflow-hidden hover:bg-white/5 transition block"
+            className="group h-full rounded-2xl border overflow-hidden hover:bg-black/5 transition block"
             style={{ borderColor: T.border }}
         >
             <div className="relative w-full h-[190px] overflow-hidden bg-black">
@@ -243,7 +243,7 @@ export default function HomePage() {
                     <div className="flex flex-col items-center text-center">
                         <div
                             className="w-full max-w-[420px] rounded-3xl overflow-hidden border"
-                            style={{ borderColor: "rgba(255,79,163,0.30)" }}
+                            style={{ borderColor: "rgba(184,134,11,0.30)" }}
                         >
                             <img
                                 src={profileImg}
@@ -313,7 +313,7 @@ export default function HomePage() {
                         <div className="mt-8 flex flex-wrap justify-center gap-3">
                             <Link
                                 to="/resume"
-                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                                 style={{ borderColor: T.border, color: T.ink }}
                             >
                                 Resume
@@ -321,7 +321,7 @@ export default function HomePage() {
 
                             <Link
                                 to="/cover-letter"
-                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                                 style={{ borderColor: T.border, color: T.ink }}
                             >
                                 Cover Letter
@@ -329,7 +329,7 @@ export default function HomePage() {
 
                             <Link
                                 to="/demo"
-                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-white/5"
+                                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl text-sm font-medium border transition hover:-translate-y-[1px] hover:bg-black/5"
                                 style={{ borderColor: T.border, color: T.ink }}
                             >
                                 Video Demo
@@ -487,8 +487,8 @@ export default function HomePage() {
                             style={{
                                 borderColor: T.border,
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.07), rgba(255,255,255,0.02))",
-                                boxShadow: "0 0 40px rgba(255,79,163,0.05)",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.07), rgba(20,15,10,0.02))",
+                                boxShadow: "0 0 40px rgba(184,134,11,0.05)",
                             }}
                         >
                             <div>
@@ -512,9 +512,9 @@ export default function HomePage() {
                                 <div
                                     className="mt-5 inline-flex rounded-full px-4 py-2 text-xs md:text-sm font-medium"
                                     style={{
-                                        background: "rgba(255,79,163,0.10)",
+                                        background: "rgba(184,134,11,0.10)",
                                         color: T.pink,
-                                        border: "1px solid rgba(255,79,163,0.18)",
+                                        border: "1px solid rgba(184,134,11,0.18)",
                                     }}
                                 >
                                     Honours Standing — Achieved Every Semester
@@ -541,11 +541,11 @@ export default function HomePage() {
                                                         src: doc.src,
                                                     })
                                                 }
-                                                className="rounded-xl border px-3 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                                className="rounded-xl border px-3 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-black/5"
                                                 style={{
                                                     borderColor: T.border,
                                                     color: T.ink,
-                                                    background: "rgba(255,255,255,0.02)",
+                                                    background: "rgba(20,15,10,0.02)",
                                                 }}
                                             >
                                                 {doc.title}
@@ -562,8 +562,8 @@ export default function HomePage() {
                             style={{
                                 borderColor: T.border,
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.05), rgba(255,255,255,0.02))",
-                                boxShadow: "0 0 35px rgba(255,79,163,0.04)",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.05), rgba(20,15,10,0.02))",
+                                boxShadow: "0 0 35px rgba(184,134,11,0.04)",
                             }}
                         >
                             <div>
@@ -584,8 +584,8 @@ export default function HomePage() {
                                         key={cert.title}
                                         className="rounded-2xl border p-4"
                                         style={{
-                                            borderColor: "rgba(255,255,255,0.06)",
-                                            background: "rgba(255,255,255,0.015)",
+                                            borderColor: "rgba(20,15,10,0.06)",
+                                            background: "rgba(20,15,10,0.015)",
                                         }}
                                     >
                                         <button
@@ -595,11 +595,11 @@ export default function HomePage() {
                                                     src: cert.src,
                                                 })
                                             }
-                                            className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                            className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-black/5"
                                             style={{
                                                 borderColor: T.border,
                                                 color: T.ink,
-                                                background: "rgba(255,255,255,0.02)",
+                                                background: "rgba(20,15,10,0.02)",
                                             }}
                                         >
                                             {cert.title}
@@ -622,8 +622,8 @@ export default function HomePage() {
                             style={{
                                 borderColor: T.border,
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.04), rgba(255,255,255,0.02))",
-                                boxShadow: "0 0 25px rgba(255,79,163,0.03)",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.04), rgba(20,15,10,0.02))",
+                                boxShadow: "0 0 25px rgba(184,134,11,0.03)",
                             }}
                         >
                             <div>
@@ -650,11 +650,11 @@ export default function HomePage() {
                                             src: DOCUMENTS.fashionDiploma,
                                         })
                                     }
-                                    className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    className="w-full rounded-xl border px-4 py-3 text-sm font-medium transition hover:-translate-y-[1px] hover:bg-black/5"
                                     style={{
                                         borderColor: T.border,
                                         color: T.ink,
-                                        background: "rgba(255,255,255,0.02)",
+                                        background: "rgba(20,15,10,0.02)",
                                     }}
                                 >
                                     View Diploma
@@ -668,8 +668,8 @@ export default function HomePage() {
                             style={{
                                 borderColor: T.border,
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.04), rgba(255,255,255,0.02))",
-                                boxShadow: "0 0 25px rgba(255,79,163,0.03)",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.04), rgba(20,15,10,0.02))",
+                                boxShadow: "0 0 25px rgba(184,134,11,0.03)",
                             }}
                         >
                             <div>
@@ -691,11 +691,11 @@ export default function HomePage() {
                                             src: DOCUMENTS.ontarioDiploma,
                                         })
                                     }
-                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-black/5"
                                     style={{
                                         borderColor: T.border,
                                         color: T.ink,
-                                        background: "rgba(255,255,255,0.02)",
+                                        background: "rgba(20,15,10,0.02)",
                                     }}
                                 >
                                     Diploma
@@ -708,11 +708,11 @@ export default function HomePage() {
                                             src: DOCUMENTS.ontarioScholar,
                                         })
                                     }
-                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-white/5"
+                                    className="rounded-xl border px-4 py-3 text-xs md:text-sm font-medium transition hover:-translate-y-[1px] hover:bg-black/5"
                                     style={{
                                         borderColor: T.border,
                                         color: T.ink,
-                                        background: "rgba(255,255,255,0.02)",
+                                        background: "rgba(20,15,10,0.02)",
                                     }}
                                 >
                                     Ontario Scholar
@@ -731,9 +731,9 @@ export default function HomePage() {
                         <div
                             className="rounded-2xl p-6 border"
                             style={{
-                                borderColor: "rgba(255,255,255,0.08)",
+                                borderColor: "rgba(20,15,10,0.08)",
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.06), rgba(20,15,10,0.02))",
                             }}
                         >
                             <MiniTitle>Student Ambassador & Junior Software Developer</MiniTitle>
@@ -750,9 +750,9 @@ export default function HomePage() {
                         <div
                             className="rounded-2xl p-6 border"
                             style={{
-                                borderColor: "rgba(255,255,255,0.08)",
+                                borderColor: "rgba(20,15,10,0.08)",
                                 background:
-                                    "linear-gradient(135deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+                                    "linear-gradient(135deg, rgba(184,134,11,0.06), rgba(20,15,10,0.02))",
                             }}
                         >
                             <MiniTitle>

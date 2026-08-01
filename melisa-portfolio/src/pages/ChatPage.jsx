@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import HeroTitle from "../components/HeroTitle";
 
 const T = {
-  bg: "#050508",
-  ink: "#F6F7FB",
-  muted: "rgba(246,247,251,0.72)",
-  soft: "rgba(246,247,251,0.52)",
-  border: "rgba(255,255,255,0.10)",
-  pink: "#FF4FA3",
-  pinkSoft: "rgba(255,79,163,0.16)",
-  card: "rgba(255,255,255,0.05)",
+  bg: "#FAF7F2",
+  ink: "#1A1613",
+  muted: "rgba(26,22,19,0.72)",
+  soft: "rgba(26,22,19,0.52)",
+  border: "rgba(20,15,10,0.10)",
+  pink: "#9C7A2E",
+  pinkSoft: "rgba(184,134,11,0.16)",
+  card: "rgba(20,15,10,0.05)",
 };
 
 const LINKS = {
@@ -152,9 +152,9 @@ export default function ChatAppProjectPage() {
       className="min-h-screen px-6 py-10 md:px-10 lg:px-16"
       style={{
         background: `
-          radial-gradient(circle at top left, rgba(255,79,163,0.14), transparent 28%),
-          radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 18%),
-          linear-gradient(180deg, #050508 0%, #08070B 48%, #050508 100%)
+          radial-gradient(circle at top left, rgba(184,134,11,0.14), transparent 28%),
+          radial-gradient(circle at top right, rgba(20,15,10,0.06), transparent 18%),
+          linear-gradient(180deg, #FAF7F2 0%, #F3EEE4 48%, #FAF7F2 100%)
         `,
         color: T.ink,
       }}
@@ -180,9 +180,9 @@ export default function ChatAppProjectPage() {
             <span
               className="inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.28em]"
               style={{
-                borderColor: "rgba(255,79,163,0.30)",
+                borderColor: "rgba(184,134,11,0.30)",
                 background: T.pinkSoft,
-                color: "#FFC2DD",
+                color: "#7A5C1E",
               }}
             >
               Full-Stack Case Study
@@ -208,7 +208,7 @@ export default function ChatAppProjectPage() {
                   className="rounded-full border px-4 py-2 text-sm"
                   style={{
                     borderColor: T.border,
-                    background: "rgba(255,255,255,0.04)",
+                    background: "rgba(20,15,10,0.04)",
                     color: T.ink,
                   }}
                 >
@@ -225,7 +225,7 @@ export default function ChatAppProjectPage() {
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition hover:-translate-y-0.5"
                 style={{
                   background: T.pink,
-                  color: "#14070F",
+                  color: "#1A1613",
                 }}
               >
                 <Github size={18} />
@@ -250,7 +250,7 @@ export default function ChatAppProjectPage() {
             className="overflow-hidden rounded-[32px] border shadow-[0_30px_100px_rgba(0,0,0,0.35)]"
             style={{
               borderColor: T.border,
-              background: "rgba(255,255,255,0.04)",
+              background: "rgba(20,15,10,0.04)",
             }}
           >
             <img
@@ -268,14 +268,14 @@ export default function ChatAppProjectPage() {
               className="rounded-[28px] border p-6 backdrop-blur-md transition duration-300 hover:-translate-y-1"
               style={{
                 borderColor: T.border,
-                background: "rgba(255,255,255,0.05)",
+                background: "rgba(20,15,10,0.05)",
               }}
             >
               <div
                 className="mb-4 h-10 w-10 rounded-2xl"
                 style={{
                   background:
-                    "linear-gradient(135deg, rgba(255,79,163,0.22), rgba(255,255,255,0.08))",
+                    "linear-gradient(135deg, rgba(184,134,11,0.22), rgba(20,15,10,0.08))",
                 }}
               />
               <h2 className="text-xl font-medium">{card.title}</h2>
@@ -290,7 +290,7 @@ export default function ChatAppProjectPage() {
           <div>
             <p
               className="text-sm uppercase tracking-[0.28em]"
-              style={{ color: "#FFB4D4" }}
+              style={{ color: "#7A5C1E" }}
             >
               Project Story
             </p>
@@ -320,7 +320,7 @@ export default function ChatAppProjectPage() {
           <div className="max-w-4xl">
             <p
               className="text-sm uppercase tracking-[0.28em]"
-              style={{ color: "#FFB4D4" }}
+              style={{ color: "#7A5C1E" }}
             >
               Visual Walkthrough
             </p>
@@ -339,9 +339,9 @@ export default function ChatAppProjectPage() {
                 <span
                   className="inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.25em]"
                   style={{
-                    borderColor: "rgba(255,79,163,0.30)",
+                    borderColor: "rgba(184,134,11,0.30)",
                     background: T.pinkSoft,
-                    color: "#FFC2DD",
+                    color: "#7A5C1E",
                   }}
                 >
                   {section.label}
@@ -378,7 +378,7 @@ export default function ChatAppProjectPage() {
                     }`}
                     style={{
                       borderColor: T.border,
-                      background: "rgba(255,255,255,0.05)",
+                      background: "rgba(20,15,10,0.05)",
                     }}
                   >
                     <div className="overflow-hidden">
@@ -409,12 +409,12 @@ export default function ChatAppProjectPage() {
             className="rounded-[30px] border p-8"
             style={{
               borderColor: T.border,
-              background: "rgba(255,255,255,0.05)",
+              background: "rgba(20,15,10,0.05)",
             }}
           >
             <p
               className="text-sm uppercase tracking-[0.25em]"
-              style={{ color: "#FFB4D4" }}
+              style={{ color: "#7A5C1E" }}
             >
               Technical Highlights
             </p>
@@ -433,12 +433,12 @@ export default function ChatAppProjectPage() {
             className="rounded-[30px] border p-8"
             style={{
               borderColor: T.border,
-              background: "rgba(255,255,255,0.05)",
+              background: "rgba(20,15,10,0.05)",
             }}
           >
             <p
               className="text-sm uppercase tracking-[0.25em]"
-              style={{ color: "#FFB4D4" }}
+              style={{ color: "#7A5C1E" }}
             >
               Takeaway
             </p>
@@ -460,9 +460,9 @@ export default function ChatAppProjectPage() {
             onClick={closeLightbox}
             className="absolute right-4 top-4 rounded-full border p-3 transition hover:scale-105"
             style={{
-              borderColor: T.border,
+              borderColor: "rgba(255,255,255,0.25)",
               background: "rgba(255,255,255,0.08)",
-              color: T.ink,
+              color: "#FFFFFF",
             }}
             aria-label="Close image preview"
           >
@@ -474,9 +474,9 @@ export default function ChatAppProjectPage() {
             onClick={showPrev}
             className="absolute left-4 rounded-full border p-3 transition hover:scale-105"
             style={{
-              borderColor: T.border,
+              borderColor: "rgba(255,255,255,0.25)",
               background: "rgba(255,255,255,0.08)",
-              color: T.ink,
+              color: "#FFFFFF",
             }}
             aria-label="Previous image"
           >
@@ -488,16 +488,16 @@ export default function ChatAppProjectPage() {
               src={currentImage.src}
               alt={currentImage.alt}
               className="max-h-[78vh] w-full object-contain"
-              style={{ borderColor: T.border }}
+              style={{ borderColor: "rgba(255,255,255,0.15)" }}
             />
             <div
               className="border-t px-6 py-4"
               style={{
-                borderColor: T.border,
+                borderColor: "rgba(255,255,255,0.15)",
                 background: "rgba(255,255,255,0.04)",
               }}
             >
-              <p className="text-base font-medium">{currentImage.alt}</p>
+              <p className="text-base font-medium" style={{ color: "#FFFFFF" }}>{currentImage.alt}</p>
             </div>
           </div>
 
@@ -506,9 +506,9 @@ export default function ChatAppProjectPage() {
             onClick={showNext}
             className="absolute right-4 rounded-full border p-3 transition hover:scale-105"
             style={{
-              borderColor: T.border,
+              borderColor: "rgba(255,255,255,0.25)",
               background: "rgba(255,255,255,0.08)",
-              color: T.ink,
+              color: "#FFFFFF",
             }}
             aria-label="Next image"
           >

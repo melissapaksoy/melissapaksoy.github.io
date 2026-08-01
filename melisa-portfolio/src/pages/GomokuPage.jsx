@@ -11,15 +11,15 @@ import HeroTitle from "../components/HeroTitle";
 
 
 const T = {
-  bg: "#050508",
-  panel: "rgba(255,255,255,0.04)",
-  panelSoft: "rgba(255,255,255,0.03)",
-  ink: "#F6F7FB",
-  muted: "rgba(246,247,251,0.72)",
-  border: "rgba(255,255,255,0.10)",
-  pink: "#FF4FA3",
-  pinkSoft: "rgba(255,79,163,0.16)",
-  glow: "0 0 40px rgba(255,79,163,0.18)",
+  bg: "#FAF7F2",
+  panel: "rgba(20,15,10,0.04)",
+  panelSoft: "rgba(20,15,10,0.03)",
+  ink: "#1A1613",
+  muted: "rgba(26,22,19,0.72)",
+  border: "rgba(20,15,10,0.10)",
+  pink: "#9C7A2E",
+  pinkSoft: "rgba(184,134,11,0.16)",
+  glow: "0 0 40px rgba(184,134,11,0.18)",
 };
 
 const PROJECT = {
@@ -160,8 +160,8 @@ export default function GomokuProjectPage() {
       style={{
         minHeight: "100vh",
         background: `
-          radial-gradient(circle at top, rgba(255,79,163,0.12), transparent 32%),
-          linear-gradient(180deg, #07070B 0%, #050508 100%)
+          radial-gradient(circle at top, rgba(184,134,11,0.12), transparent 32%),
+          linear-gradient(180deg, #F3EEE4 0%, #FAF7F2 100%)
         `,
         color: T.ink,
       }}
@@ -183,7 +183,7 @@ export default function GomokuProjectPage() {
               color: T.muted,
               textDecoration: "none",
               border: `1px solid ${T.border}`,
-              background: "rgba(255,255,255,0.03)",
+              background: "rgba(20,15,10,0.03)",
               padding: "10px 14px",
               borderRadius: 999,
               transition: "0.2s ease",
@@ -200,8 +200,8 @@ export default function GomokuProjectPage() {
             overflow: "hidden",
             border: `1px solid ${T.border}`,
             background: `
-              linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
-              rgba(255,255,255,0.02)
+              linear-gradient(135deg, rgba(20,15,10,0.05), rgba(20,15,10,0.02)),
+              rgba(20,15,10,0.02)
             `,
             borderRadius: 30,
             padding: "34px 24px",
@@ -217,7 +217,7 @@ export default function GomokuProjectPage() {
               height: 260,
               borderRadius: "50%",
               background:
-                "radial-gradient(circle, rgba(255,79,163,0.18), transparent 65%)",
+                "radial-gradient(circle, rgba(184,134,11,0.18), transparent 65%)",
               pointerEvents: "none",
             }}
           />
@@ -288,13 +288,13 @@ export default function GomokuProjectPage() {
                     alignItems: "center",
                     gap: 10,
                     textDecoration: "none",
-                    color: "#fff",
+                    color: "#1A1613",
                     background: T.pink,
                     border: `1px solid ${T.pink}`,
                     padding: "12px 18px",
                     borderRadius: 999,
                     fontWeight: 700,
-                    boxShadow: "0 10px 30px rgba(255,79,163,0.28)",
+                    boxShadow: "0 10px 30px rgba(184,134,11,0.28)",
                   }}
                 >
                   <Github size={17} />
@@ -309,7 +309,7 @@ export default function GomokuProjectPage() {
                     gap: 10,
                     textDecoration: "none",
                     color: T.ink,
-                    background: "rgba(255,255,255,0.03)",
+                    background: "rgba(20,15,10,0.03)",
                     border: `1px solid ${T.border}`,
                     padding: "12px 18px",
                     borderRadius: 999,
@@ -326,7 +326,7 @@ export default function GomokuProjectPage() {
                 border: `1px solid ${T.border}`,
                 borderRadius: 24,
                 background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
+                  "linear-gradient(180deg, rgba(20,15,10,0.05), rgba(20,15,10,0.02))",
                 padding: 18,
                 display: "flex",
                 flexDirection: "column",
@@ -361,7 +361,7 @@ export default function GomokuProjectPage() {
                     padding: "12px 14px",
                     borderRadius: 16,
                     border: `1px solid ${T.border}`,
-                    background: "rgba(255,255,255,0.025)",
+                    background: "rgba(20,15,10,0.025)",
                   }}
                 >
                   <span style={{ color: T.muted }}>{label}</span>
@@ -565,7 +565,7 @@ export default function GomokuProjectPage() {
                       padding: "6px 10px",
                       borderRadius: 999,
                       border: `1px solid ${T.border}`,
-                      background: "rgba(255,255,255,0.03)",
+                      background: "rgba(20,15,10,0.03)",
                       color: T.pink,
                       fontSize: "0.78rem",
                       fontWeight: 700,
@@ -715,8 +715,8 @@ export default function GomokuProjectPage() {
           style={{
             border: `1px solid ${T.border}`,
             background: `
-              radial-gradient(circle at top right, rgba(255,79,163,0.12), transparent 30%),
-              rgba(255,255,255,0.03)
+              radial-gradient(circle at top right, rgba(184,134,11,0.12), transparent 30%),
+              rgba(20,15,10,0.03)
             `,
             borderRadius: 30,
             padding: "28px 22px",
@@ -758,7 +758,7 @@ export default function GomokuProjectPage() {
                 gap: 10,
                 textDecoration: "none",
                 color: T.ink,
-                background: "rgba(255,255,255,0.03)",
+                background: "rgba(20,15,10,0.03)",
                 border: `1px solid ${T.border}`,
                 padding: "12px 18px",
                 borderRadius: 999,

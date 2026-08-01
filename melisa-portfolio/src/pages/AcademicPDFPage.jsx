@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -16,18 +16,18 @@ import HeroTitle from "../components/HeroTitle";
 
 
 const T = {
-  bg: "#050508",
-  card: "rgba(14,14,22,0.88)",
-  card2: "rgba(18,18,28,0.96)",
-  ink: "#F6F7FB",
-  muted: "rgba(246,247,251,0.72)",
-  soft: "rgba(246,247,251,0.52)",
-  border: "rgba(255,255,255,0.10)",
-  pink: "#FF4FA3",
-  pink2: "#FF85C1",
-  pink3: "#FFC1DD",
-  glow: "rgba(255,79,163,0.22)",
-  glowStrong: "rgba(255,79,163,0.34)",
+  bg: "#FAF7F2",
+  card: "rgba(255,255,255,0.92)",
+  card2: "rgba(255,255,255,0.98)",
+  ink: "#1A1613",
+  muted: "rgba(26,22,19,0.72)",
+  soft: "rgba(26,22,19,0.52)",
+  border: "rgba(20,15,10,0.10)",
+  pink: "#9C7A2E",
+  pink2: "#B8860B",
+  pink3: "#7A5C1E",
+  glow: "rgba(184,134,11,0.22)",
+  glowStrong: "rgba(184,134,11,0.34)",
 };
 
 const IMAGES = {
@@ -198,7 +198,7 @@ function LargeGalleryCard({ item, onClick }) {
       onClick={onClick}
       style={{
         background:
-          "linear-gradient(180deg, rgba(255,79,163,0.08), rgba(255,255,255,0.02))",
+          "linear-gradient(180deg, rgba(184,134,11,0.08), rgba(20,15,10,0.02))",
         border: `1px solid ${T.border}`,
         borderRadius: 26,
         overflow: "hidden",
@@ -212,7 +212,7 @@ function LargeGalleryCard({ item, onClick }) {
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-4px)";
         e.currentTarget.style.boxShadow = `0 0 28px ${T.glow}`;
-        e.currentTarget.style.borderColor = "rgba(255,79,163,0.35)";
+        e.currentTarget.style.borderColor = "rgba(184,134,11,0.35)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = "translateY(0)";
@@ -223,7 +223,7 @@ function LargeGalleryCard({ item, onClick }) {
       <div
         style={{
           aspectRatio: "16 / 10",
-          background: "#111",
+          background: "#F0ECE4",
           overflow: "hidden",
           borderBottom: `1px solid ${T.border}`,
         }}
@@ -249,8 +249,8 @@ function LargeGalleryCard({ item, onClick }) {
             fontSize: 12,
             fontWeight: 700,
             color: T.pink3,
-            background: "rgba(255,79,163,0.12)",
-            border: "1px solid rgba(255,79,163,0.22)",
+            background: "rgba(184,134,11,0.12)",
+            border: "1px solid rgba(184,134,11,0.22)",
             marginBottom: 12,
           }}
         >
@@ -291,7 +291,7 @@ function SmallPdfCard({ item, onClick }) {
         borderRadius: 20,
         overflow: "hidden",
         background:
-          "linear-gradient(180deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+          "linear-gradient(180deg, rgba(184,134,11,0.06), rgba(20,15,10,0.02))",
         cursor: "pointer",
         transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
         padding: 0,
@@ -301,7 +301,7 @@ function SmallPdfCard({ item, onClick }) {
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "translateY(-3px)";
         e.currentTarget.style.boxShadow = `0 0 22px ${T.glow}`;
-        e.currentTarget.style.borderColor = "rgba(255,79,163,0.28)";
+        e.currentTarget.style.borderColor = "rgba(184,134,11,0.28)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = "translateY(0)";
@@ -381,7 +381,7 @@ function OutcomeCard({ item }) {
     <div
       style={{
         background:
-          "linear-gradient(180deg, rgba(255,79,163,0.09), rgba(255,255,255,0.02))",
+          "linear-gradient(180deg, rgba(184,134,11,0.09), rgba(20,15,10,0.02))",
         border: `1px solid ${T.border}`,
         borderRadius: 24,
         padding: 22,
@@ -396,7 +396,7 @@ function OutcomeCard({ item }) {
           display: "grid",
           placeItems: "center",
           borderRadius: 15,
-          background: "rgba(255,79,163,0.14)",
+          background: "rgba(184,134,11,0.14)",
           color: T.pink2,
           marginBottom: 14,
         }}
@@ -431,20 +431,15 @@ function OutcomeCard({ item }) {
 export default function AcademicPdf() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const allGallery = useMemo(
-    () => [...appGallery, ...inputGallery, ...outputGallery],
-    []
-  );
-
   return (
     <div
       style={{
         minHeight: "100vh",
         background: `
-          radial-gradient(circle at top left, rgba(255,79,163,0.16), transparent 25%),
+          radial-gradient(circle at top left, rgba(184,134,11,0.16), transparent 25%),
           radial-gradient(circle at top right, rgba(255,133,193,0.10), transparent 22%),
-          radial-gradient(circle at center, rgba(255,79,163,0.05), transparent 38%),
-          #050508
+          radial-gradient(circle at center, rgba(184,134,11,0.05), transparent 38%),
+          #FAF7F2
         `,
         color: T.ink,
       }}
@@ -492,8 +487,8 @@ export default function AcademicPdf() {
                 gap: 10,
                 padding: "10px 14px",
                 borderRadius: 999,
-                border: "1px solid rgba(255,79,163,0.22)",
-                background: "rgba(255,79,163,0.10)",
+                border: "1px solid rgba(184,134,11,0.22)",
+                background: "rgba(184,134,11,0.10)",
                 color: T.pink2,
                 fontWeight: 700,
                 fontSize: 13,
@@ -545,7 +540,7 @@ export default function AcademicPdf() {
                       color: T.ink,
                       fontWeight: 600,
                       fontSize: 14,
-                      background: "rgba(255,255,255,0.04)",
+                      background: "rgba(20,15,10,0.04)",
                       border: `1px solid ${T.border}`,
                       backdropFilter: "blur(10px)",
                     }}
@@ -566,8 +561,8 @@ export default function AcademicPdf() {
                   textDecoration: "none",
                   color: T.ink,
                   background:
-                    "linear-gradient(135deg, rgba(255,79,163,0.22), rgba(255,255,255,0.05))",
-                  border: "1px solid rgba(255,79,163,0.24)",
+                    "linear-gradient(135deg, rgba(184,134,11,0.22), rgba(20,15,10,0.05))",
+                  border: "1px solid rgba(184,134,11,0.24)",
                   padding: "14px 18px",
                   borderRadius: 16,
                   fontWeight: 700,
@@ -615,9 +610,9 @@ export default function AcademicPdf() {
               style={{
                 position: "relative",
                 background:
-                  "linear-gradient(180deg, rgba(255,79,163,0.08), rgba(255,255,255,0.03))",
+                  "linear-gradient(180deg, rgba(184,134,11,0.08), rgba(20,15,10,0.03))",
                 borderRadius: 30,
-                border: `1px solid rgba(255,79,163,0.20)`,
+                border: `1px solid rgba(184,134,11,0.20)`,
                 overflow: "hidden",
                 boxShadow: `0 0 36px ${T.glow}`,
                 backdropFilter: "blur(12px)",
@@ -672,7 +667,7 @@ export default function AcademicPdf() {
                 key={item.title}
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(255,79,163,0.06), rgba(255,255,255,0.02))",
+                    "linear-gradient(180deg, rgba(184,134,11,0.06), rgba(20,15,10,0.02))",
                   border: `1px solid ${T.border}`,
                   borderRadius: 24,
                   padding: 22,
@@ -686,7 +681,7 @@ export default function AcademicPdf() {
                     display: "grid",
                     placeItems: "center",
                     borderRadius: 14,
-                    background: "rgba(255,79,163,0.12)",
+                    background: "rgba(184,134,11,0.12)",
                     color: T.pink2,
                     marginBottom: 14,
                   }}
@@ -753,7 +748,7 @@ export default function AcademicPdf() {
                 key={step.num}
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(255,79,163,0.05), rgba(255,255,255,0.02))",
+                    "linear-gradient(180deg, rgba(184,134,11,0.05), rgba(20,15,10,0.02))",
                   border: `1px solid ${T.border}`,
                   borderRadius: 24,
                   padding: 22,
@@ -806,8 +801,8 @@ export default function AcademicPdf() {
           <div
             style={{
               background:
-                "linear-gradient(180deg, rgba(255,79,163,0.08), rgba(255,255,255,0.02))",
-              border: `1px solid rgba(255,79,163,0.18)`,
+                "linear-gradient(180deg, rgba(184,134,11,0.08), rgba(20,15,10,0.02))",
+              border: `1px solid rgba(184,134,11,0.18)`,
               borderRadius: 30,
               padding: "28px 24px",
               marginBottom: 26,
@@ -871,7 +866,7 @@ export default function AcademicPdf() {
             <div
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,79,163,0.07), rgba(255,255,255,0.02))",
+                  "linear-gradient(180deg, rgba(184,134,11,0.07), rgba(20,15,10,0.02))",
                 border: `1px solid ${T.border}`,
                 borderRadius: 24,
                 padding: 24,
@@ -917,8 +912,8 @@ export default function AcademicPdf() {
             <div
               style={{
                 background:
-                  "linear-gradient(180deg, rgba(255,79,163,0.10), rgba(255,255,255,0.02))",
-                border: "1px solid rgba(255,79,163,0.22)",
+                  "linear-gradient(180deg, rgba(184,134,11,0.10), rgba(20,15,10,0.02))",
+                border: "1px solid rgba(184,134,11,0.22)",
                 borderRadius: 24,
                 padding: 24,
                 boxShadow: `0 0 24px ${T.glow}`,
@@ -982,7 +977,7 @@ export default function AcademicPdf() {
                 style={{
                   padding: "12px 16px",
                   borderRadius: 999,
-                  background: "rgba(255,255,255,0.04)",
+                  background: "rgba(20,15,10,0.04)",
                   border: `1px solid ${T.border}`,
                   color: T.ink,
                   fontWeight: 600,
@@ -1116,7 +1111,7 @@ export default function AcademicPdf() {
               maxHeight: "90vh",
               overflow: "auto",
               background: T.card2,
-              border: `1px solid rgba(255,79,163,0.20)`,
+              border: `1px solid rgba(184,134,11,0.20)`,
               borderRadius: 24,
               boxShadow: `0 0 40px ${T.glow}`,
             }}
@@ -1156,7 +1151,7 @@ export default function AcademicPdf() {
                 onClick={() => setSelectedImage(null)}
                 style={{
                   border: `1px solid ${T.border}`,
-                  background: "rgba(255,255,255,0.03)",
+                  background: "rgba(20,15,10,0.03)",
                   color: T.ink,
                   width: 42,
                   height: 42,

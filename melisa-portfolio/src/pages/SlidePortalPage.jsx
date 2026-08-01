@@ -403,8 +403,8 @@ const styles = {
   page: {
     minHeight: "100vh",
     background:
-      "radial-gradient(circle at top, rgba(255,79,163,0.14), transparent 22%), #050508",
-    color: "#F6F7FB",
+      "radial-gradient(circle at top, rgba(184,134,11,0.14), transparent 22%), #FAF7F2",
+    color: "#1A1613",
     position: "relative",
     overflow: "hidden",
   },
@@ -415,7 +415,7 @@ const styles = {
     left: "-100px",
     width: "340px",
     height: "340px",
-    background: "rgba(255,79,163,0.12)",
+    background: "rgba(184,134,11,0.12)",
     filter: "blur(90px)",
     borderRadius: "999px",
     pointerEvents: "none",
@@ -427,7 +427,7 @@ const styles = {
     right: "-80px",
     width: "340px",
     height: "340px",
-    background: "rgba(255,79,163,0.10)",
+    background: "rgba(184,134,11,0.10)",
     filter: "blur(90px)",
     borderRadius: "999px",
     pointerEvents: "none",
@@ -445,7 +445,7 @@ const styles = {
     display: "inline-flex",
     alignItems: "center",
     gap: "8px",
-    color: "#F6F7FB",
+    color: "#1A1613",
     textDecoration: "none",
     marginBottom: "22px",
     fontSize: "0.95rem",
@@ -453,9 +453,9 @@ const styles = {
   },
 
   heroCard: {
-    border: "1px solid rgba(255,255,255,0.10)",
+    border: "1px solid rgba(20,15,10,0.10)",
     background:
-      "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+      "linear-gradient(180deg, rgba(20,15,10,0.05), rgba(20,15,10,0.025))",
     backdropFilter: "blur(12px)",
     borderRadius: "28px",
     padding: "36px",
@@ -471,7 +471,7 @@ const styles = {
   },
 
   eyebrow: {
-    color: "#FF4FA3",
+    color: "#9C7A2E",
     fontSize: "0.88rem",
     fontWeight: 700,
     textTransform: "uppercase",
@@ -489,7 +489,7 @@ const styles = {
   summary: {
     fontSize: "1.05rem",
     lineHeight: 1.8,
-    color: "rgba(246,247,251,0.78)",
+    color: "rgba(26,22,19,0.78)",
     maxWidth: "900px",
     margin: 0,
   },
@@ -507,9 +507,9 @@ const styles = {
     gap: "10px",
     padding: "12px 16px",
     borderRadius: "999px",
-    border: "1px solid rgba(255,255,255,0.10)",
-    background: "rgba(255,255,255,0.04)",
-    color: "#F6F7FB",
+    border: "1px solid rgba(20,15,10,0.10)",
+    background: "rgba(20,15,10,0.04)",
+    color: "#1A1613",
     fontSize: "0.95rem",
   },
 
@@ -525,8 +525,8 @@ const styles = {
     aspectRatio: "16 / 10",
     borderRadius: "24px",
     overflow: "hidden",
-    border: "1px solid rgba(255,255,255,0.10)",
-    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(20,15,10,0.10)",
+    background: "rgba(20,15,10,0.03)",
     boxShadow: "0 16px 40px rgba(0,0,0,0.28)",
   },
 
@@ -545,16 +545,16 @@ const styles = {
   },
 
   infoCard: {
-    border: "1px solid rgba(255,255,255,0.10)",
-    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(20,15,10,0.10)",
+    background: "rgba(20,15,10,0.03)",
     borderRadius: "24px",
     padding: "26px",
     boxShadow: "0 12px 40px rgba(0,0,0,0.24)",
   },
 
   fullCard: {
-    border: "1px solid rgba(255,255,255,0.10)",
-    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(20,15,10,0.10)",
+    background: "rgba(20,15,10,0.03)",
     borderRadius: "24px",
     padding: "26px",
     boxShadow: "0 12px 40px rgba(0,0,0,0.24)",
@@ -566,25 +566,25 @@ const styles = {
     alignItems: "center",
     gap: "10px",
     marginBottom: "16px",
-    color: "#FF4FA3",
+    color: "#9C7A2E",
   },
 
   sectionTitle: {
     fontSize: "1.22rem",
     margin: 0,
-    color: "#F6F7FB",
+    color: "#1A1613",
   },
 
   paragraph: {
     margin: "0 0 14px",
     lineHeight: 1.8,
-    color: "rgba(246,247,251,0.78)",
+    color: "rgba(26,22,19,0.78)",
   },
 
   list: {
     margin: 0,
     paddingLeft: "18px",
-    color: "rgba(246,247,251,0.82)",
+    color: "rgba(26,22,19,0.82)",
     lineHeight: 1.8,
   },
 
@@ -602,9 +602,9 @@ const styles = {
     padding: "10px 14px",
     borderRadius: "999px",
     fontSize: "0.9rem",
-    border: "1px solid rgba(255,79,163,0.28)",
-    background: "rgba(255,79,163,0.10)",
-    color: "#FFD3E8",
+    border: "1px solid rgba(184,134,11,0.28)",
+    background: "rgba(184,134,11,0.10)",
+    color: "#7A5C1E",
   },
 
   workflowGrid: {
@@ -614,8 +614,8 @@ const styles = {
   },
 
   workflowStep: {
-    border: "1px solid rgba(255,255,255,0.08)",
-    background: "rgba(255,255,255,0.025)",
+    border: "1px solid rgba(20,15,10,0.08)",
+    background: "rgba(20,15,10,0.025)",
     borderRadius: "22px",
     padding: "20px",
   },
@@ -623,7 +623,7 @@ const styles = {
   stepNumber: {
     fontSize: "0.82rem",
     fontWeight: 800,
-    color: "#FF4FA3",
+    color: "#9C7A2E",
     marginBottom: "10px",
     letterSpacing: "0.08em",
   },
@@ -631,18 +631,18 @@ const styles = {
   workflowTitle: {
     margin: "0 0 10px",
     fontSize: "1.05rem",
-    color: "#F6F7FB",
+    color: "#1A1613",
   },
 
   workflowText: {
     margin: 0,
     lineHeight: 1.7,
-    color: "rgba(246,247,251,0.72)",
+    color: "rgba(26,22,19,0.72)",
     fontSize: "0.95rem",
   },
 
   galleryIntro: {
-    color: "rgba(246,247,251,0.72)",
+    color: "rgba(26,22,19,0.72)",
     lineHeight: 1.7,
     marginTop: 0,
     marginBottom: "18px",
@@ -663,8 +663,8 @@ const styles = {
   },
 
   galleryCard: {
-    border: "1px solid rgba(255,255,255,0.08)",
-    background: "rgba(255,255,255,0.03)",
+    border: "1px solid rgba(20,15,10,0.08)",
+    background: "rgba(20,15,10,0.03)",
     borderRadius: "22px",
     overflow: "hidden",
     boxShadow: "0 10px 30px rgba(0,0,0,0.22)",
@@ -674,7 +674,7 @@ const styles = {
   imageWrap: {
     width: "100%",
     aspectRatio: "16 / 10",
-    background: "#0D0D12",
+    background: "#F0ECE4",
     overflow: "hidden",
   },
 
@@ -692,14 +692,14 @@ const styles = {
   galleryTitle: {
     margin: "0 0 10px",
     fontSize: "1rem",
-    color: "#F6F7FB",
+    color: "#1A1613",
   },
 
   galleryDescription: {
     margin: 0,
     fontSize: "0.94rem",
     lineHeight: 1.7,
-    color: "rgba(246,247,251,0.72)",
+    color: "rgba(26,22,19,0.72)",
   },
 
   footerButtons: {
@@ -711,21 +711,21 @@ const styles = {
 
   primaryButton: {
     textDecoration: "none",
-    background: "linear-gradient(135deg, #FF4FA3, #FF86C0)",
-    color: "#050508",
+    background: "linear-gradient(135deg, #9C7A2E, #C9A961)",
+    color: "#1A1613",
     fontWeight: 700,
     padding: "14px 22px",
     borderRadius: "999px",
-    boxShadow: "0 10px 30px rgba(255,79,163,0.28)",
+    boxShadow: "0 10px 30px rgba(184,134,11,0.28)",
   },
 
   secondaryButton: {
     textDecoration: "none",
-    border: "1px solid rgba(255,255,255,0.12)",
-    color: "#F6F7FB",
+    border: "1px solid rgba(20,15,10,0.12)",
+    color: "#1A1613",
     padding: "14px 22px",
     borderRadius: "999px",
-    background: "rgba(255,255,255,0.04)",
+    background: "rgba(20,15,10,0.04)",
   },
 
   modalOverlay: {
@@ -745,9 +745,9 @@ const styles = {
     maxHeight: "90vh",
     overflow: "auto",
     borderRadius: "24px",
-    border: "1px solid rgba(255,255,255,0.10)",
-    background: "#0B0B10",
-    boxShadow: "0 24px 80px rgba(0,0,0,0.45)",
+    border: "1px solid rgba(20,15,10,0.10)",
+    background: "#FFFFFF",
+    boxShadow: "0 24px 80px rgba(20,15,10,0.18)",
     position: "relative",
   },
 
@@ -758,9 +758,9 @@ const styles = {
     width: "40px",
     height: "40px",
     borderRadius: "999px",
-    border: "1px solid rgba(255,255,255,0.12)",
-    background: "rgba(255,255,255,0.06)",
-    color: "#F6F7FB",
+    border: "1px solid rgba(20,15,10,0.12)",
+    background: "rgba(20,15,10,0.06)",
+    color: "#1A1613",
     display: "grid",
     placeItems: "center",
     cursor: "pointer",
@@ -769,7 +769,7 @@ const styles = {
 
   modalImageWrap: {
     width: "100%",
-    background: "#050508",
+    background: "#FAF7F2",
   },
 
   modalImage: {
@@ -785,12 +785,12 @@ const styles = {
   modalTitle: {
     margin: "0 0 10px",
     fontSize: "1.15rem",
-    color: "#F6F7FB",
+    color: "#1A1613",
   },
 
   modalDescription: {
     margin: 0,
     lineHeight: 1.8,
-    color: "rgba(246,247,251,0.74)",
+    color: "rgba(26,22,19,0.74)",
   },
 };

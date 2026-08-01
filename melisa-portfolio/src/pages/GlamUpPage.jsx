@@ -18,17 +18,17 @@ const demoVideo = `${import.meta.env.BASE_URL}projects/glamup/GlamUpDemostration
 
 
 const T = {
-  bg: "#050508",
-  ink: "#F6F7FB",
-  muted: "rgba(246,247,251,0.72)",
-  soft: "rgba(246,247,251,0.50)",
-  border: "rgba(255,255,255,0.10)",
-  pink: "#FF4FA3",
-  pinkSoft: "rgba(255,79,163,0.14)",
+  bg: "#FAF7F2",
+  ink: "#1A1613",
+  muted: "rgba(26,22,19,0.72)",
+  soft: "rgba(26,22,19,0.50)",
+  border: "rgba(20,15,10,0.10)",
+  pink: "#9C7A2E",
+  pinkSoft: "rgba(184,134,11,0.14)",
   panel:
-    "linear-gradient(135deg, rgba(255,79,163,0.10), rgba(255,255,255,0.03))",
+    "linear-gradient(135deg, rgba(184,134,11,0.10), rgba(20,15,10,0.03))",
   panelStrong:
-    "linear-gradient(135deg, rgba(255,79,163,0.16), rgba(255,255,255,0.04))",
+    "linear-gradient(135deg, rgba(184,134,11,0.16), rgba(20,15,10,0.04))",
 };
 
 function Card({ children, className = "" }) {
@@ -39,7 +39,7 @@ function Card({ children, className = "" }) {
         borderColor: T.border,
         background: T.panel,
         boxShadow:
-          "0 0 0 1px rgba(255,79,163,0.05) inset, 0 24px 80px rgba(0,0,0,0.35)",
+          "0 0 0 1px rgba(184,134,11,0.05) inset, 0 24px 80px rgba(0,0,0,0.35)",
       }}
     >
       {children}
@@ -73,8 +73,8 @@ function Pill({ icon, children }) {
     <div
       className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm"
       style={{
-        borderColor: "rgba(255,255,255,0.10)",
-        background: "rgba(255,255,255,0.03)",
+        borderColor: "rgba(20,15,10,0.10)",
+        background: "rgba(20,15,10,0.03)",
         color: T.ink,
       }}
     >
@@ -89,8 +89,8 @@ function StatCard({ icon, label, value }) {
     <div
       className="rounded-2xl border p-5"
       style={{
-        borderColor: "rgba(255,255,255,0.08)",
-        background: "rgba(255,255,255,0.03)",
+        borderColor: "rgba(20,15,10,0.08)",
+        background: "rgba(20,15,10,0.03)",
       }}
     >
       <div className="mb-4 inline-flex rounded-2xl p-3" style={{ background: T.pinkSoft }}>
@@ -109,13 +109,13 @@ function FeatureCard({ icon, title, text }) {
     <div
       className="rounded-3xl border p-6"
       style={{
-        borderColor: "rgba(255,255,255,0.08)",
-        background: "rgba(255,255,255,0.03)",
+        borderColor: "rgba(20,15,10,0.08)",
+        background: "rgba(20,15,10,0.03)",
       }}
     >
       <div
         className="mb-4 inline-flex rounded-2xl p-3"
-        style={{ background: "rgba(255,79,163,0.12)", color: T.pink }}
+        style={{ background: "rgba(184,134,11,0.12)", color: T.pink }}
       >
         {icon}
       </div>
@@ -135,24 +135,24 @@ function DocumentPreviewCard({ title, summary, href, type = "PDF" }) {
       rel="noreferrer"
       className="group block rounded-2xl border p-4 transition duration-300 hover:-translate-y-1"
       style={{
-        borderColor: "rgba(255,255,255,0.08)",
+        borderColor: "rgba(20,15,10,0.08)",
         background:
-          "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,79,163,0.06))",
+          "linear-gradient(180deg, rgba(20,15,10,0.03), rgba(184,134,11,0.06))",
         boxShadow: "0 14px 34px rgba(0,0,0,0.20)",
       }}
     >
       <div
         className="mb-4 flex h-28 items-center justify-center rounded-2xl border"
         style={{
-          borderColor: "rgba(255,255,255,0.08)",
+          borderColor: "rgba(20,15,10,0.08)",
           background:
-            "linear-gradient(180deg, rgba(255,79,163,0.16), rgba(255,255,255,0.03))",
+            "linear-gradient(180deg, rgba(184,134,11,0.16), rgba(20,15,10,0.03))",
         }}
       >
         <div className="text-center">
           <div
             className="mx-auto mb-2 inline-flex rounded-xl p-3"
-            style={{ background: "rgba(255,79,163,0.12)", color: T.pink }}
+            style={{ background: "rgba(184,134,11,0.12)", color: T.pink }}
           >
             <FileText size={22} />
           </div>
@@ -259,7 +259,7 @@ export default function GlamUpPage() {
       className="min-h-screen px-6 py-16 md:px-8"
       style={{
         background:
-          "radial-gradient(circle at top, rgba(255,79,163,0.12), transparent 30%), #050508",
+          "radial-gradient(circle at top, rgba(184,134,11,0.12), transparent 30%), #FAF7F2",
         color: T.ink,
       }}
     >
@@ -299,8 +299,8 @@ export default function GlamUpPage() {
                   className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition hover:scale-[1.02]"
                   style={{
                     background: T.pink,
-                    color: "#050508",
-                    boxShadow: "0 12px 30px rgba(255,79,163,0.35)",
+                    color: "#1A1613",
+                    boxShadow: "0 12px 30px rgba(184,134,11,0.35)",
                   }}
                 >
                   <PlayCircle size={18} />
@@ -311,8 +311,8 @@ export default function GlamUpPage() {
                   href="#documents"
                   className="inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium"
                   style={{
-                    borderColor: "rgba(255,255,255,0.10)",
-                    background: "rgba(255,255,255,0.03)",
+                    borderColor: "rgba(20,15,10,0.10)",
+                    background: "rgba(20,15,10,0.03)",
                     color: T.ink,
                   }}
                 >
@@ -326,9 +326,9 @@ export default function GlamUpPage() {
               <div
                 className="w-full max-w-[480px] rounded-[2rem] border p-4"
                 style={{
-                  borderColor: "rgba(255,255,255,0.10)",
+                  borderColor: "rgba(20,15,10,0.10)",
                   background:
-                    "linear-gradient(180deg, rgba(255,79,163,0.12), rgba(255,255,255,0.03))",
+                    "linear-gradient(180deg, rgba(184,134,11,0.12), rgba(20,15,10,0.03))",
                   boxShadow: "0 22px 60px rgba(0,0,0,0.30)",
                 }}
               >
@@ -352,9 +352,9 @@ export default function GlamUpPage() {
           <div
             className="mt-8 overflow-hidden rounded-[2rem] border p-3"
             style={{
-              borderColor: "rgba(255,255,255,0.08)",
+              borderColor: "rgba(20,15,10,0.08)",
               background:
-                "linear-gradient(180deg, rgba(255,79,163,0.12), rgba(255,255,255,0.02))",
+                "linear-gradient(180deg, rgba(184,134,11,0.12), rgba(20,15,10,0.02))",
               boxShadow: "0 18px 50px rgba(0,0,0,0.28)",
             }}
           >
@@ -439,8 +439,8 @@ export default function GlamUpPage() {
                 key={item}
                 className="rounded-2xl border px-5 py-4"
                 style={{
-                  borderColor: "rgba(255,255,255,0.08)",
-                  background: "rgba(255,255,255,0.03)",
+                  borderColor: "rgba(20,15,10,0.08)",
+                  background: "rgba(20,15,10,0.03)",
                 }}
               >
                 <p className="leading-7" style={{ color: T.muted }}>
